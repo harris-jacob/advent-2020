@@ -5,7 +5,7 @@ My attempt at 2020's advent of code. I am terrible at all things algorithms and 
 
 ## Technologies
 - [c++](https://www.cplusplus.com/)
-- CMAKE(https://cmake.org/)
+- [CMAKE](https://cmake.org/)
 - [Docker](https://www.docker.com/)
 - [VScode + Devcontainers](https://code.visualstudio.com/docs/remote/containers)
 - Christmas spirit 🎅 
