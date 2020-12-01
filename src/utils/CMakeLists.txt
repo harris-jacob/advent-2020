@@ -1,4 +1,9 @@
 add_library(
     utils
-    read_file.cpp
+    utils.cpp
+)
+
+
+target_include_directories(utils PUBLIC
+    .
 )
