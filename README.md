@@ -15,8 +15,9 @@ My attempt at 2020's advent of code. I am terrible at all things algorithms and 
 - `git clone` this repo.
 - open the directory in vscode and follow the prompt that asks you to build and open in container.
 
-## BUilding the code 
+## Bulding and running the code
 - run a `cmake configure` from vscode or the terminal.
 - hit an `f7`.
-- All should be well.
+- run `test` target to run all example solutions tests.
+- run `main` to launch all solutions with their respective inputs. 
 
