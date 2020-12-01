@@ -39,9 +39,10 @@ target_include_directories(test PRIVATE
   ${solutions_SOURCE_DIR}
 )
 
-target_link_libraries(test PRIVATE 
+target_link_libraries(test PUBLIC 
 # src
 utils
+solutions
 # test
 gtest_main
 )
