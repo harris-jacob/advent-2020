@@ -1,7 +1,7 @@
 # advent-2020
 
 ## Advent of Code
-My attempt at 2020's advent of code. I am terrible at all things algorithms and data structures, so this should a great opportunity to learn. Also, I suck at c++ too, so hopefully I can pick up some of that too.
+My attempt at 2020's advent of code. I am terrible at all things algorithms and data structures, so this should a great opportunity to learn. Also, I suck at c++, so hopefully I can pick up some of that.
 
 ## Technologies
 - [c++](https://www.cplusplus.com/)
