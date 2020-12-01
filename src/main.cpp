@@ -9,6 +9,10 @@ const std::string _INPUT_DIR = "../input/";
 
 // TODO big ole switch here
 int main() {
+  // Part one
   auto input = utils::readInput("../../input/day_01.txt");
   std::cout << day1::partOne(input) << "\n";
+
+  // Part two
+  std::cout << day1::partTwo(input) << "\n";
 }

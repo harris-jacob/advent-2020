@@ -21,8 +21,13 @@ TEST(day_1, partOne) {
   EXPECT_EQ(day1::partOne(input), 514579);
 }
 
-TEST(day_1, partTwo) { // Arrange
+TEST(day_1, partTwo) { 
+  // Arrange
   std::vector<int> input{1721, 979, 366, 299, 675, 1456};
+
+  // Assert
+  EXPECT_EQ(day1::partTwo(input), 241861950);
+
 } // namespace test
 
 } // namespace test
