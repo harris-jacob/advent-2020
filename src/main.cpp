@@ -5,11 +5,12 @@
 #include <string>
 #include <vector>
 
-const std::string _INPUT_DIR = "../input/";
+
+const std::string _INPUT_DIR = "input/";
 
 void dayOneSolution() {
   // Load
-  auto input = utils::readInput("../../input/day_01.txt");
+  auto input = utils::readInput(_INPUT_DIR + "day_1.txt");
   // Part one
   std::cout << day1::partOne(input) << "\n";
   // Part two
@@ -18,5 +19,5 @@ void dayOneSolution() {
 
 // TODO big ole switch here
 int main() {
-
+  dayOneSolution();
 }
