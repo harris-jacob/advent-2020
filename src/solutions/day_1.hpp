@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include <unordered_map>
+#include <unordered_set>
 
 namespace day1 {
 
@@ -18,18 +18,18 @@ int partOne(std::vector<int> input) {
 
 int partTwo(std::vector<int> input) {
   
-  // construct map
-  std::unordered_map<int, int> int_map;
+  // construct set
+  std::unordered_set<int> int_set;
   for(int i = 0; i < input.size(); i++) {
-    int_map[input[i]] = i;
+    int_set.insert(input[i]);
   }
 
   for(int i = 0; i<input.size(); i++) {
     for(int j = i +1; j < input.size(); j++) {
       int required = 2020 - input[i] - input[j];
-      auto val = int_map.find(required);
-      if(val != int_map.end()) {
-        return val->first * input[i] * input[j];
+      auto val = int_set.find(required);
+      if(val != int_set.end()) {
+        return *val * input[i] * input[j];
       }
     }
   }
