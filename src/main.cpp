@@ -4,17 +4,21 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 
-const std::string _INPUT_DIR = "input/";
+const std::string _INPUT_DIR = "../../input/";
 
 void dayOneSolution() {
   // Load
-  auto input = utils::readIntInput(_INPUT_DIR + "day_1.txt");
-  std::cout << input.size() << "\n";
+  std::ifstream infile(_INPUT_DIR + "day_1.txt");
+  auto input = utils::readIntInput(infile);
+
+  std::cout << "Day 1: \n";
+
   // Part one
-  std::cout << day1::partOne(input) << "\n";
+  std::cout << "  - part 1: " << day1::partOne(input) << "\n";
   // Part two
-  std::cout << day1::partTwo(input) << "\n";
+  std::cout << "  - part 2: " << day1::partTwo(input) << "\n";
 }
 
 // TODO big ole switch here

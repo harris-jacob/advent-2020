@@ -47,3 +47,5 @@ solutions
 # test
 gtest_main
 )
+
+add_test(NAME test COMMAND test)

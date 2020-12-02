@@ -5,8 +5,7 @@
 
 namespace utils {
 
-std::vector<int> readIntInput(std::string path) {
-  std::ifstream infile(path);
+std::vector<int> readIntInput(std::ifstream& infile) {;
   std::vector<int> input{};
   int a;
 
@@ -17,13 +16,19 @@ std::vector<int> readIntInput(std::string path) {
   return input;
 }
 
-std::vector<std::string> readStrInput(const std::string path) {
+std::vector<std::string> readStrInput(std::ifstream& infile) {
   std::string line;
   std::vector<std::string> input{};
-  std::ifstream infile(path);
   while (std::getline(infile, line)) {
+  // Annoying edge case if files are created on windows machine
+  if (!line.empty() && line[line.size() - 1] == '\r') {
+    line.erase(line.size() - 1);
+  }
     input.push_back(line);
   }
+
+
+  return input;
 }
 
 } // namespace utils

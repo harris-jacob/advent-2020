@@ -9,7 +9,8 @@ namespace test {
 auto input_path = "../../input/day_1.txt";
 
 TEST(day_1, loadInput) {
-  std::vector<int> input = utils::readIntInput(input_path);
+  std::ifstream infile(input_path);
+  std::vector<int> input = utils::readIntInput(infile);
   EXPECT_EQ(input[0], 2000);
 }
 
@@ -28,6 +29,6 @@ TEST(day_1, partTwo) {
   // Assert
   EXPECT_EQ(day1::partTwo(input), 241861950);
 
-} // namespace test
+}
 
 } // namespace test
