@@ -1,18 +1,15 @@
+#pragma once
+
 #include <fstream>
 #include <string>
 #include <vector>
 
 namespace utils {
 
-std::vector<int> readInput(std::string path) {
-  std::ifstream infile(path);
-  std::vector<int> input{};
-  int a;
+// Read file containing line separated ints and return as vector
+std::vector<int> readIntInput(std::string path);
 
-  while (infile >> a) {
-    input.push_back(a);
-  }
+// Read file of strings by line and return as vector.
+std::vector<std::string> readStrInput(const std::string path);
 
-  return input;
-}
 } // namespace utils
