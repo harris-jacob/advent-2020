@@ -46,4 +46,17 @@ TEST(day_2, partOne) {
 
 }
 
+TEST(day_2, partTwo) {
+  // Arrange
+  std::vector<std::string> input{
+    "1-3 a: abcde",
+    "1-3 b: cdefg",
+    "2-9 c: ccccccccc"
+  };
+
+  // Act/Assert
+  EXPECT_EQ(day2::partTwo(input), 1);
+
+}
+
 } // namespace test

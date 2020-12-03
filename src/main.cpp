@@ -33,6 +33,9 @@ void dayTwoSolution() {
   // Part one
   std::cout << "  - part 1: " << day2::partOne(input) << "\n";
 
+  // Part two
+  std::cout << "  - part 2: " << day2::partTwo(input) << "\n";
+
 
 }
 
