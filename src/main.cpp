@@ -1,5 +1,6 @@
 #include "day_1.hpp"
 #include "day_2.hpp"
+#include "day_3.hpp"
 #include "read_file.hpp"
 
 #include <iostream>
@@ -35,9 +36,18 @@ void dayTwoSolution() {
 
   // Part two
   std::cout << "  - part 2: " << day2::partTwo(input) << "\n";
+}
 
+void dayThreeSolution() {
+    // Load
+  std::ifstream infile(_INPUT_DIR + "day_3.txt");
+  auto input = utils::readStrInput(infile);
+  
+  std::cout << "Day 3: \n";
 
+  // Part one
+  std::cout << "  - part 1: " << day3::partOne(input) << "\n";
 }
 
 // TODO big ole switch here
-int main() { dayTwoSolution(); }
+int main() { dayThreeSolution(); }
