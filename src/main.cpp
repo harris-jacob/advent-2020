@@ -47,6 +47,9 @@ void dayThreeSolution() {
 
   // Part one
   std::cout << "  - part 1: " << day3::partOne(input) << "\n";
+
+    // Part one
+  std::cout << "  - part 2: " << day3::partTwo(input) << "\n";
 }
 
 // TODO big ole switch here
