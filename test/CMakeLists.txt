@@ -33,6 +33,7 @@ endif()
 # Test executables
 add_executable(test
 day1_test.cpp
+day2_test.cpp
 )
 
 target_include_directories(test PRIVATE
@@ -46,3 +47,5 @@ solutions
 # test
 gtest_main
 )
+
+add_test(NAME test COMMAND test)
