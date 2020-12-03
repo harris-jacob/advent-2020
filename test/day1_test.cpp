@@ -6,7 +6,7 @@
 
 namespace test {
 
-auto input_path = "../../input/day_1.txt";
+auto input_path = "./input/day_1.txt";
 
 TEST(day_1, loadInput) {
   std::ifstream infile(input_path);
