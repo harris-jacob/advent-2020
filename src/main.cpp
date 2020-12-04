@@ -1,56 +1,31 @@
-#include "day_1.hpp"
-#include "day_2.hpp"
-#include "day_3.hpp"
-#include "read_file.hpp"
+#include "register.cpp"
 
 #include <iostream>
 #include <string>
 #include <vector>
 #include <fstream>
+#include <stdexcept>
 
 // TODO figure out how to not make this depend on the working dir.
 const std::string _INPUT_DIR = "./input/";
 
-void dayOneSolution() {
-  // Load
-  std::ifstream infile(_INPUT_DIR + "day_1.txt");
-  auto input = utils::readIntInput(infile);
+int main(int arcg, char** argv) { 
+    if (argc != 1) {
+        throw std::invalid_argument(
+            "Expected single arg for day. e.g.: 1)";
+    }
+    
+    int day = atoi(argv[0]);
 
-  std::cout << "Day 1: \n";
+    int solutions;
+    switch (day)
+    {
+    case 1:
+      
 
-  // Part one
-  std::cout << "  - part 1: " << day1::partOne(input) << "\n";
-  // Part two
-  std::cout << "  - part 2: " << day1::partTwo(input) << "\n";
+    
+    default:
+      break;
+    }
+
 }
-
-void dayTwoSolution() {
-  // Load
-  std::ifstream infile(_INPUT_DIR + "day_2.txt");
-  auto input = utils::readStrInput(infile);
-  
-  std::cout << "Day 2: \n";
-
-  // Part one
-  std::cout << "  - part 1: " << day2::partOne(input) << "\n";
-
-  // Part two
-  std::cout << "  - part 2: " << day2::partTwo(input) << "\n";
-}
-
-void dayThreeSolution() {
-    // Load
-  std::ifstream infile(_INPUT_DIR + "day_3.txt");
-  auto input = utils::readStrInput(infile);
-  
-  std::cout << "Day 3: \n";
-
-  // Part one
-  std::cout << "  - part 1: " << day3::partOne(input) << "\n";
-
-    // Part one
-  std::cout << "  - part 2: " << day3::partTwo(input) << "\n";
-}
-
-// TODO big ole switch here
-int main() { dayThreeSolution(); }
