@@ -1,7 +1,8 @@
 #include "day_1.hpp"
 #include "read_file.hpp"
 #include "gtest/gtest.h"
-#include <iostream>
+#include <sstream>
+#include <fstream>
 #include <vector>
 
 namespace test {
@@ -16,19 +17,22 @@ TEST(day_1, loadInput) {
 
 TEST(day_1, partOne) {
   // Arrange
-  std::vector<int> input{1721, 979, 366, 299, 675, 1456};
+  std::istringstream input("1721\n979\n366\n299\n675\n1456");
+  auto solution = day1::Day1();
 
-  // Assert
-  EXPECT_EQ(day1::partOne(input), 514579);
+  // Act/Assert
+  EXPECT_EQ(solution.partOne(input), "514579");
+
+
 }
 
 TEST(day_1, partTwo) {
   // Arrange
-  std::vector<int> input{1721, 979, 366, 299, 675, 1456};
+  std::istringstream input("1721\n979\n366\n299\n675\n1456");
+  auto solution = day1::Day1();
 
-  // Assert
-  EXPECT_EQ(day1::partTwo(input), 241861950);
-
+  // Act/Assert
+  EXPECT_EQ(solution.partTwo(input), "241861950");
 }
 
 } // namespace test

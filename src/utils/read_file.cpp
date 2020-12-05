@@ -1,11 +1,10 @@
 #include "read_file.hpp"
-#include <iostream>
 #include <string>
 #include <vector>
 
 namespace utils {
 
-std::vector<int> readIntInput(std::ifstream& infile) {;
+std::vector<int> readIntInput(std::istream& infile) {;
   std::vector<int> input{};
   int a;
 
@@ -16,7 +15,7 @@ std::vector<int> readIntInput(std::ifstream& infile) {;
   return input;
 }
 
-std::vector<std::string> readStrInput(std::ifstream& infile) {
+std::vector<std::string> readStrInput(std::istream& infile) {
   std::string line;
   std::vector<std::string> input{};
   while (std::getline(infile, line)) {

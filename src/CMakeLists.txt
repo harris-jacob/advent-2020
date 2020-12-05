@@ -5,6 +5,9 @@ add_executable(main
     main.cpp
 )
 
+file(GLOB INPUT ../input/*.txt)
+file(COPY ${INPUT} DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
 target_include_directories(main PRIVATE
   ${solutions_SOURCE_DIR}
 )

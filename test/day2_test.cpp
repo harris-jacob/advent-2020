@@ -1,6 +1,7 @@
 #include "read_file.hpp"
 #include "gtest/gtest.h"
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <string>
 #include "day_2.hpp"
@@ -35,27 +36,31 @@ TEST(day_2, getPassword) {
 
 TEST(day_2, partOne) {
   // Arrange
-  std::vector<std::string> input{
-    "1-3 a: abcde",
-    "1-3 b: cdefg",
-    "2-9 c: ccccccccc"
-  };
+  std::istringstream input(
+    "1-3 a: abcde\n"
+    "1-3 b: cdefg\n"
+    "2-9 c: ccccccccc\n"
+  );
+
+  auto solution = day2::Day2();
 
   // Act/Assert
-  EXPECT_EQ(day2::partOne(input), 2);
+  EXPECT_EQ(solution.partOne(input), "2");
 
 }
 
 TEST(day_2, partTwo) {
   // Arrange
-  std::vector<std::string> input{
-    "1-3 a: abcde",
-    "1-3 b: cdefg",
-    "2-9 c: ccccccccc"
-  };
+  std::istringstream input(
+    "1-3 a: abcde\n"
+    "1-3 b: cdefg\n"
+    "2-9 c: ccccccccc\n"
+  );
+
+  auto solution = day2::Day2();
 
   // Act/Assert
-  EXPECT_EQ(day2::partTwo(input), 1);
+  EXPECT_EQ(solution.partTwo(input), "1");
 
 }
 

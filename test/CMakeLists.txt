@@ -34,6 +34,7 @@ endif()
 add_executable(test
 day1_test.cpp
 day2_test.cpp
+day3_test.cpp
 )
 
 target_include_directories(test PRIVATE

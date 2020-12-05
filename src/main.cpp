@@ -1,43 +1,50 @@
-#include "day_1.hpp"
-#include "day_2.hpp"
-#include "read_file.hpp"
-
 #include <iostream>
-#include <string>
 #include <vector>
 #include <fstream>
+#include <sstream>
+#include <stdexcept>
 
-// TODO figure out how to not make this depend on the working dir.
-const std::string _INPUT_DIR = "./input/";
+#include "solutions.hpp"
+#include "register.hpp"
 
-void dayOneSolution() {
-  // Load
-  std::ifstream infile(_INPUT_DIR + "day_1.txt");
-  auto input = utils::readIntInput(infile);
 
-  std::cout << "Day 1: \n";
+// TODO: GUI and some viz?
+int main() { 
+    int day;
+    int part;
 
-  // Part one
-  std::cout << "  - part 1: " << day1::partOne(input) << "\n";
-  // Part two
-  std::cout << "  - part 2: " << day1::partTwo(input) << "\n";
+    // TODO: use boost to find filepath eventually
+    std::string _PATH = "/workspaces/advent-2020/build/src/";
+
+    std::cout << "what day would you like to solve?\n";
+    std::cin >> day;
+
+    // Get the solution for that day
+    auto solution = solutions::Solution::instantiate(day);
+    if (!solution) {
+        throw std::invalid_argument("solution for that day not found :(");
+    }
+
+    // Read input
+    std::stringstream ss;
+    ss << _PATH << "day_" << day << ".txt";
+    std::fstream input(ss.str());
+
+    if(!input) {
+        throw std::invalid_argument("Cannot find the input file for this day. Check the input folder.");
+    };
+    
+    std::cout << "Would you like to solve part 1 or part 2?\n";
+    std::cin >> part;
+
+    if(part != 1 && part != 2) {
+        throw std::invalid_argument("Invalid input, please input either 1 or 2");
+    }
+
+    if(part == 1) {
+        std::cout << "answer: " << solution->partOne(input) << "\n";
+    } else {
+        std::cout << "answer: " << solution->partTwo(input) << "\n";
+    }
+
 }
-
-void dayTwoSolution() {
-  // Load
-  std::ifstream infile(_INPUT_DIR + "day_2.txt");
-  auto input = utils::readStrInput(infile);
-  
-  std::cout << "Day 2: \n";
-
-  // Part one
-  std::cout << "  - part 1: " << day2::partOne(input) << "\n";
-
-  // Part two
-  std::cout << "  - part 2: " << day2::partTwo(input) << "\n";
-
-
-}
-
-// TODO big ole switch here
-int main() { dayTwoSolution(); }
