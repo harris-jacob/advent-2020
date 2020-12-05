@@ -29,8 +29,8 @@ class Solution {
         }
     };
 
-    virtual int partOne(std::istream& input) = 0;
-    virtual int partTwo(std::istream& input) = 0;
+    virtual std::string partOne(std::istream& input) = 0;
+    virtual std::string partTwo(std::istream& input) = 0;
     
     std::string description;
   

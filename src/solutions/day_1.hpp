@@ -6,6 +6,7 @@
 #include <vector>
 #include <unordered_set>
 #include <memory>
+#include <string>
 
 namespace day1 {
 
@@ -16,22 +17,22 @@ class Day1 : public solutions::Solution {
     }
 
     // Solve part one
-    int partOne(std::istream& input) override {
+    std::string partOne(std::istream& input) override {
       // read input
       auto ints = utils::readIntInput(input);
 
       for (int i = 0; i < ints.size(); i++) {
         for (int j = i + 1; j < ints.size(); j++) {
           if (ints[i] + ints[j] == 2020) {
-            return ints[i] * ints[j];
+            return std::to_string(ints[i] * ints[j]);
           }
         }
       }
-      return -1;
+      return "-1";
     }
 
     // Solve part two
-    int partTwo(std::istream& input) override {
+    std::string partTwo(std::istream& input) {
       // read input
       auto ints = utils::readIntInput(input);
 
@@ -46,11 +47,11 @@ class Day1 : public solutions::Solution {
           int required = 2020 - ints[i] - ints[j];
           auto val = int_set.find(required);
           if(val != int_set.end()) {
-            return *val * ints[i] * ints[j];
+            return std::to_string(*val * ints[i] * ints[j]);
           }
         }
       }
-      return -1;
+      return "-1";
     }
 };
 

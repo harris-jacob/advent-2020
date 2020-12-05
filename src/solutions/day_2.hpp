@@ -3,6 +3,9 @@
 #include <string>
 #include <sstream>
 #include <algorithm>
+#include "solutions.hpp"
+#include "read_file.hpp"
+
 
 namespace day2 {
 
@@ -43,40 +46,52 @@ Password createPassword(std::string &input) {
 
 }
 
-// Solve part 1
-int partOne(std::vector<std::string> input) {
-    // count of valid passwords
-    int count = 0;
-
-    // Construct passwords
-    for (int i=0; i<input.size(); ++i) {
-        auto password = createPassword(input[i]);
-
-        int n = std::count(password.password.begin(), password.password.end(), password.target);
-
-        if(n >= password.min && n <= password.max ) {
-            count++;
+class Day2 : public solutions::Solution {
+  public:
+    static std::unique_ptr<solutions::Solution> create() {
+        return std::make_unique<Day2>();
         }
-    }
-    return count;
-}
 
-// Solve part 2
-int partTwo(std::vector<std::string> input) {
-    // count of valid passwords
-    int count = 0;
+    // Solve part 1
+    std::string partOne(std::istream& input) {
+        // count of valid passwords
+        int count = 0;
 
-    // Construct passwords
-    for (int i=0; i<input.size(); ++i) {
-        auto password = createPassword(input[i]);
+        // read input
+        auto passwords = utils::readStrInput(input);
 
-        if((password.password[password.max-1] == password.target && password.password[password.min-1] != password.target) || 
-        (password.password[password.min-1] == password.target &&  password.password[password.max-1] != password.target)) {
-            count++;
+        // Construct passwords
+        for (int i=0; i<passwords.size(); ++i) {
+            auto password = createPassword(passwords[i]);
+
+            int n = std::count(password.password.begin(), password.password.end(), password.target);
+
+            if(n >= password.min && n <= password.max ) {
+                count++;
+            }
         }
+        return std::to_string(count);
     }
-    return count;
-}
 
+    // Solve part 2
+    std::string partTwo(std::istream& input) {
+        // count of valid passwords
+        int count = 0;
+
+        // read input
+        auto passwords = utils::readStrInput(input);
+
+        // Construct passwords
+        for (int i=0; i<passwords.size(); ++i) {
+            auto password = createPassword(passwords[i]);
+
+            if((password.password[password.max-1] == password.target && password.password[password.min-1] != password.target) || 
+            (password.password[password.min-1] == password.target &&  password.password[password.max-1] != password.target)) {
+                count++;
+            }
+        }
+        return std::to_string(count);
+    }
+};
 
 } // namespace day2

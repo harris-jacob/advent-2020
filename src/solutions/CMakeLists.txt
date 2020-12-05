@@ -1,7 +1,7 @@
 add_library(solutions
 solutions.cpp
-register.cpp
 )
+
 
 target_include_directories(solutions PUBLIC
     .

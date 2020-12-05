@@ -21,7 +21,7 @@ TEST(day_1, partOne) {
   auto solution = day1::Day1();
 
   // Act/Assert
-  EXPECT_EQ(solution.partOne(input), 514579);
+  EXPECT_EQ(solution.partOne(input), "514579");
 
 
 }
@@ -32,7 +32,7 @@ TEST(day_1, partTwo) {
   auto solution = day1::Day1();
 
   // Act/Assert
-  EXPECT_EQ(solution.partTwo(input), 241861950);
+  EXPECT_EQ(solution.partTwo(input), "241861950");
 }
 
 } // namespace test

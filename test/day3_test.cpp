@@ -1,8 +1,8 @@
 #include "read_file.hpp"
 #include "gtest/gtest.h"
 #include <vector>
+#include <fstream>
 #include <string>
-
 #include "day_3.hpp"
 
 namespace test {
@@ -21,36 +21,49 @@ TEST(day_3, loadInput) {
 }
 
 TEST(day_3, partOne) {
-    // Arrange
-    std::vector<std::string> input{
-        "..##.......",
-        "#...#...#..",
-        ".#....#..#.",
-        "..#.#...#.#",
-        ".#...##..#.",
-        "..#.##.....",
-        ".#.#.#....#",
-        ".#........#",
-        "#.##...#...",
-        "#...##....#",
-        ".#..#...#.#"
-    };
+  // Arrange
+  std::istringstream input(
+        "..##.......\n"
+        "#...#...#..\n"
+        ".#....#..#.\n"
+        "..#.#...#.#\n"
+        ".#...##..#.\n"
+        "..#.##.....\n"
+        ".#.#.#....#\n"
+        ".#........#\n"
+        "#.##...#...\n"
+        "#...##....#\n"
+        ".#..#...#.#\n"
+  );
+
+    auto solution = day3::Day3();
 
     // Act/Assert
-    EXPECT_EQ(day3::partOne(input), 7);
+    EXPECT_EQ(solution.partOne(input), "7");
 }
 
 TEST(day_3, partTwo) {
-    // Arrange
-    // Arrange
-    std::ifstream infile("./input/day_3.txt");
+  // Arrange
+  std::istringstream input(
+        "..##.......\n"
+        "#...#...#..\n"
+        ".#....#..#.\n"
+        "..#.#...#.#\n"
+        ".#...##..#.\n"
+        "..#.##.....\n"
+        ".#.#.#....#\n"
+        ".#........#\n"
+        "#.##...#...\n"
+        "#...##....#\n"
+        ".#..#...#.#\n"
+  );
 
-    // Act
-    std::vector<std::string> input = utils::readStrInput(infile);
+    auto solution = day3::Day3();
+
     
     
     // Act/Assert
-    EXPECT_EQ(day3::partTwo(input), 336);
+    EXPECT_EQ(solution.partTwo(input), "336");
 }
 
 
