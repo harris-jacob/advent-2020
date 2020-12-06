@@ -12,4 +12,7 @@ std::vector<int> readIntInput(std::istream& infile);
 // Read file of strings by line and return as vector.
 std::vector<std::string> readStrInput(std::istream& infile);
 
+// Read a file of blank line delimeters and return as vector.
+std::vector<std::string> readLnDelimiterInput(std::istream& infile);
+
 } // namespace utils
