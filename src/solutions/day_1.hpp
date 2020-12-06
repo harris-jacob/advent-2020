@@ -2,7 +2,6 @@
 
 #include "solutions.hpp"
 #include "read_file.hpp"
-#include <iostream>
 #include <vector>
 #include <unordered_set>
 #include <memory>
