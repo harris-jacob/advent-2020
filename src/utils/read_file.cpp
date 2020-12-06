@@ -30,4 +30,31 @@ std::vector<std::string> readStrInput(std::istream& infile) {
   return input;
 }
 
+std::vector<std::string> readLnDelimiterInput(std::istream& infile) {
+  std::string line;
+  std::string item;
+  std::vector<std::string> items;
+
+  while(std::getline(infile, line)) {
+    
+    if(line.empty()) {
+      items.push_back(item);
+      item.clear();
+      continue;
+    }
+
+    if(item.length() > 0) {
+      item.push_back(' ');
+    }
+
+    item += line;
+
+  }
+
+  // last one has no newline
+  items.push_back(item);
+
+  return items;
+}
+
 } // namespace utils
