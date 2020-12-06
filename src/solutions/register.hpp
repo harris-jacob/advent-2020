@@ -3,6 +3,7 @@
 #include "day_3.hpp"
 #include "day_4.hpp"
 #include "day_5.hpp"
+
 #include "solutions.hpp"
 
 namespace solutions {
