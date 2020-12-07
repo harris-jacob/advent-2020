@@ -18,7 +18,7 @@ TEST(day_5, loadInput) {
 }
 
 TEST(day_5, partOne) {
-      // Arrange
+  // Arrange
   std::istringstream input(
       "FBFBBFFRLR\n"
       "BFFFBBFRRR\n"

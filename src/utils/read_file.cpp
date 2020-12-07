@@ -30,6 +30,7 @@ std::vector<std::string> readStrInput(std::istream& infile) {
   return input;
 }
 
+// custom input case for day 4 TODO: move this to day 4 class
 std::vector<std::string> readLnDelimiterInput(std::istream& infile) {
   std::string line;
   std::string item;
