@@ -1,6 +1,5 @@
 #include "read_file.hpp"
 #include "gtest/gtest.h"
-#include <iostream>
 #include <fstream>
 #include <vector>
 #include <string>
