@@ -4,6 +4,7 @@
 #include "day_4.hpp"
 #include "day_5.hpp"
 #include "day_6.hpp"
+#include "day_7.hpp"
 
 #include "solutions.hpp"
 
@@ -15,5 +16,6 @@ Solution::Registrar<day3::Day3> r03(3, "Toboggan Trajectory");
 Solution::Registrar<day4::Day4> r04(4, "Passport Processing");
 Solution::Registrar<day5::Day5> r05(5, "Passport Control");
 Solution::Registrar<day6::Day6> r06(6, "Custom Customs");
+Solution::Registrar<day7::Day7> r07(7, "Handy Haversacks");
 
 }
