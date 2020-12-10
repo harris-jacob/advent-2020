@@ -15,6 +15,17 @@ std::vector<int> readIntInput(std::istream& infile) {;
   return input;
 }
 
+std::vector<long> readLongInput(std::istream& infile) {
+  std::vector<long> input{};
+  long a;
+
+  while (infile >> a) {
+    input.push_back(a);
+  }
+
+  return input;
+}
+
 std::vector<std::string> readStrInput(std::istream& infile) {
   std::string line;
   std::vector<std::string> input{};
