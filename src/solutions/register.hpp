@@ -7,6 +7,7 @@
 #include "day_7.hpp"
 #include "day_8.hpp"
 #include "day_9.hpp"
+#include "day_10.hpp"
 
 #include "solutions.hpp"
 
@@ -21,4 +22,5 @@ Solution::Registrar<day6::Day6> r06(6, "Custom Customs");
 Solution::Registrar<day7::Day7> r07(7, "Handy Haversacks");
 Solution::Registrar<day8::Day8> r08(8, "Handheld Halting");
 Solution::Registrar<day9::Day9> r09(9, "Encoding Error");
+Solution::Registrar<day10::Day10> r10(10, "Adapter Array");
 }
