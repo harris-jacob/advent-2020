@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <stdexcept>
 #include <cmath>
 #include <set>
 #include "solutions.hpp"
@@ -79,23 +80,30 @@ class Day14: public solutions::Solution {
         std::set<long> nums;
         for(std::string::size_type i=0; i< 36; ++i) {
             // turn all 1s in both mask and num to zero
-    
+            long exp = std::pow(2, 35 - i);
 
             if(mask[i] == '1') {
-                // if already 1 we don't want to add again
-                long exp = std::pow(2, 35 - i);
-                num = num | exp;
+                num |= exp;
             }
+
             else if(mask[i] == 'X') {
-                num &= ~(1 << 35-i);
                 floats.push_back(i);
+                // NOTE i wasn't using UL at first and it broke my code and took me hours to figure out.
+                num &= ~(1UL << (35-i));
             }
         }
 
         // add the initial val
         nums.insert(num);
 
-        return evalFloats(floats, nums);
+        auto eval_floats = evalFloats(floats, nums);
+        auto comb = std::pow(2, floats.size());
+        
+        if(eval_floats.size() != comb) {
+            throw std::runtime_error("combinations");
+        }
+
+        return eval_floats;
 
     }
 
