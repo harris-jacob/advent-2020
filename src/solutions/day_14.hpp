@@ -1,7 +1,8 @@
 #include <string>
 #include <vector>
 #include <map>
-
+#include <cmath>
+#include <set>
 #include "solutions.hpp"
 #include "read_file.hpp"
 
@@ -40,11 +41,86 @@ class Day14: public solutions::Solution {
     }
 
     std::string partTwo(std::istream& input) {
+        auto commands = parse(input);
+        std::map<long, long> memory;
+
+        for (auto command : commands) {
+            if(command.first == "mask") {
+                mask = command.second;
+            }
+
+            else if(command.first.substr(0, 3) == "mem"){ 
+                auto mem_addr = command.first.substr(4);
+                mem_addr.pop_back();
+                auto vals = maskMutateP2(std::stoi(mem_addr));
+                
+                for(auto val : vals ) {
+                    memory[val] = std::stoi(command.second);
+                }
+            }
+        }
+
+        // sum memory
+        long result = 0;
+        for(auto const& x : memory) {
+            result+=x.second;
+        }
+
+        return std::to_string(result);
 
     }
 
   private:
     std::string mask;
+
+
+    std::set<long> maskMutateP2(long num) {
+        std::vector<int> floats;  
+        std::set<long> nums;
+        for(std::string::size_type i=0; i< 36; ++i) {
+            // turn all 1s in both mask and num to zero
+    
+
+            if(mask[i] == '1') {
+                // if already 1 we don't want to add again
+                long exp = std::pow(2, 35 - i);
+                num = num | exp;
+            }
+            else if(mask[i] == 'X') {
+                num &= ~(1 << 35-i);
+                floats.push_back(i);
+            }
+        }
+
+        // add the initial val
+        nums.insert(num);
+
+        return evalFloats(floats, nums);
+
+    }
+
+    std::set<long> evalFloats(std::vector<int> floats, std::set<long>& nums) {
+        if(floats.size() == 0) {
+            return nums;
+        } 
+
+        int index = floats[0];
+        floats.erase(floats.begin());
+
+        long exp = std::pow(2, 35 - index);
+
+        for(auto const num : nums) {
+            long new_val = num | exp;
+            if(nums.count(new_val) != 0) {
+                continue;
+            }
+            nums.insert(new_val);
+        }
+
+        return evalFloats(floats, nums);
+
+    }
+
     
     long maskMutate(int num) {
         std::string bin_val = toBinary(num);
