@@ -23,13 +23,15 @@ TEST(day_14, partTwo) {
 
   // Arrange
   std::istringstream input(
-    "mask = X00001010X0010101X00101X001010XX0010\n"
-    "mem[1234] = 5678\n"
+        "mask = 000000000000000000000000000000X1001X\n"
+        "mem[42] = 100\n"
+        "mask = 00000000000000000000000000000000X0XX\n"
+        "mem[26] = 1\n"
   );
 
   auto solution = day14::Day14();
 
   // Assert
-  EXPECT_EQ(solution.partTwo(input), "508032");
+  EXPECT_EQ(solution.partTwo(input), "208");
 
 }
