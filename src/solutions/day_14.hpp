@@ -16,7 +16,7 @@ class Day14: public solutions::Solution {
         return std::make_unique<Day14>();
     }
 
-    std::string partOne(std::istream& input) {
+    std::string partOne(std::istream& input) override {
         auto commands = parse(input);
         std::map<int, long> memory;
 
@@ -41,7 +41,7 @@ class Day14: public solutions::Solution {
         return std::to_string(result);
     }
 
-    std::string partTwo(std::istream& input) {
+    std::string partTwo(std::istream& input) override {
         auto commands = parse(input);
         std::map<long, long> memory;
 

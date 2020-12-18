@@ -13,7 +13,7 @@
 #include "day_13.hpp"
 #include "day_14.hpp"
 #include "day_15.hpp"
-
+#include "day_16.hpp"
 #include "solutions.hpp"
 
 namespace solutions {
@@ -33,4 +33,5 @@ Solution::Registrar<day12::Day12> r12(12, "Rain Risk");
 Solution::Registrar<day13::Day13> r13(13, "Shuttle Search");
 Solution::Registrar<day14::Day14> r14(14, "Docking Data");
 Solution::Registrar<day15::Day15> r15(15, "Rambunctious Recitation");
+Solution::Registrar<day16::Day16> r16(16, "Ticket Translation");
 }

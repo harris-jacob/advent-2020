@@ -14,7 +14,7 @@ class Day15: public solutions::Solution {
     }
 
 
-    std::string partOne(std::istream& input) {
+    std::string partOne(std::istream& input) override {
         auto ints = parse(input);
 
         // map of seen to when it was seen
@@ -47,7 +47,7 @@ class Day15: public solutions::Solution {
 
     
 
-    std::string partTwo(std::istream& input) {
+    std::string partTwo(std::istream& input) override {
         auto ints = parse(input);
 
         // map of seen to when it was seen
