@@ -3,6 +3,8 @@
 #include "day_15.hpp"
 #include "gtest/gtest.h"
 
+namespace test {
+
 TEST(day_15, partOne) {
 
   // Arrange
@@ -15,6 +17,8 @@ TEST(day_15, partOne) {
   // Assert
   EXPECT_EQ(solution.partOne(input), "436");
 }
+
+} // namespace test
 
 // Took this out because it runs slow ~ 10000ms (could probably speed up with a faster map lib, but meh)
 /**

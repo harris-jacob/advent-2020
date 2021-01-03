@@ -3,6 +3,8 @@
 #include "gtest/gtest.h"
 #include "day_11.hpp"
 
+namespace test {
+
 TEST(day_11, partOne) {
 
       // Arrange
@@ -46,3 +48,5 @@ TEST(day_11, partTwo) {
     // Assert
     EXPECT_EQ(solution.partTwo(input), "26");
 }
+
+} // namespace test
