@@ -1,7 +1,9 @@
 #include <istream>
-
 #include "day_13.hpp"
 #include "gtest/gtest.h"
+
+
+namespace test {
 
 TEST(day_13, partOne) {
 
@@ -25,4 +27,6 @@ TEST(day_13, partTwo) {
 
   // Assert
   EXPECT_EQ(solution.partTwo(input), "1202161486");
+}
+
 }

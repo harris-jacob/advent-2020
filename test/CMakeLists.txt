@@ -48,6 +48,7 @@ day13_test.cpp
 day14_test.cpp
 day15_test.cpp
 day16_test.cpp
+day17_test.cpp
 )
 
 target_include_directories(test PRIVATE
