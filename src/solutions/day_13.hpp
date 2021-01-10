@@ -1,3 +1,4 @@
+#pragma once
 #include "read_file.hpp"
 #include "solutions.hpp"
 #include <cstdlib>
