@@ -5,6 +5,8 @@
 #include <memory>
 #include <vector>
 #include <string>
+#include <stack>
+#include <map>
 
 namespace day18
 {
@@ -20,54 +22,95 @@ namespace day18
     // Solve part one
     std::string partOne(std::istream &input) override
     {
-      // read input
-      lines = utils::readStrInput(input);
-      int sum = 0;
-      for (auto &line : lines)
-      {
-        sum += doMaths(line);
-      }
-    }
-
-    int solveLine(std::string &s)
-    {
-      // strip spaces
-      s.erase(std::remove_if(s.begin(), s.end(), ::isspace), s.end());
-      // handle all brackets
-      handleBrackets(s);
-
-      // call doMaths a final time
-      return doMaths(s);
-      // return sum
-    }
-
-    void handleBrackets(std::string &line)
-    {
-      // Find the first ) and take index.
-      // Recurse back and find corresponding (
-      // call doMaths on ( to ). Store output in temp_var
-      // Remove ( to ) replace with temp_var
-      // Recurse
-      for ()
-    }
-
-    int doMaths(std::string &s)
-    {
-      int sum = 0;
-      // loop through
-      for ()
-        // if * do i-1 * i+1 -> result to sum
-        // elif i == + do i-1 + i+1 -> result to sum
-        return sum;
+      auto tokens = utils::readStrInput(input)
     }
 
     // Solve part two
-    std::string partTwo(std::istream &input)
+    std::string partTwo(std::istream &input) override
     {
     }
 
   private:
-    std::vector<std::string> lines;
+    std::stack<int> operands;
+    std::stack<char> operators;
+
+    std::map<char, int>precedence_map = {{'-', 0}, {'+', 1}, {'*', 2}, {'/', 3}};
+
+
+    int djikstrasTwoStack(const std::string &input) {
+      for(char& c : input) {
+      }
+    }
+
+    int handleToken(const char& c) {
+      switch(c) {
+        case "(":
+          handleLeftParenthesis();
+          break;
+        case ")":
+          handleRightParenthesis();
+          break;
+        case "+":
+        case "-":
+        case "/":
+        case "*":
+          handleOperator(const char& c);
+          break;
+        default:
+          handleNumber(const char& c);
+          break;
+      }
+    }
+
+    void handleLeftParenthesis() {
+        operators.push('(');
+    }
+    void handleNumber(const char& c) {
+      int num = std::atoi(c);
+      operands.push(num);
+    }
+
+    void handleRightParenthesis() {
+      char popped = operators.pop();
+
+      while popped != '(' {
+          int operand1 = operands.pop();
+          int operand2 = operands.pop();
+
+          applyOperator(val1, val2, operator)
+      }
+
+    }
+
+    void handleOperator(const char& thisOp) {
+        precidence = getPrecidence()
+    }
+
+    void applyOperator(int operand1, int operand2, char operator) {
+        switch(operator) {
+          case '+':
+            operands.push(operand1 + operand2);
+            break;
+           case '-':
+            operands.push(operand2 - operand1);
+            break;
+           case '*':
+            operands.push(operand1*operand2);
+            break;
+           case '/':
+            operands.push(operand2 / operand1);
+            break;
+           default:
+            throw std::exception("Unknown operand");
+        }
+    }
+
+    int getPrecidence(char c) {
+      precedence_map[c]
+    }
+
+
+
   };
 
 } // namespace day18
